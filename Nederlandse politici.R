@@ -26,9 +26,9 @@ library(maps)
 library(prophet)
 library(twitteR)
 library(rtweet)
-#stap 1 -> Wilders
 
-Naam <- c("Geert Wilders", "Sigrid Kaag", "Lilian Marijnissen")
+
+Naam <- c("Geert Wilders", "Sigrid Kaag", "Lilian Marijnissen") #I want to create the full list, later
 Username <- c("@geertwilders", "@SigridKaag", "@MarijnissenL")
 Partij <- c("PVV", "D66", "SP")
 
@@ -154,7 +154,10 @@ p = ggplot() +
   geom_smooth(data = Retweetcount9, aes(x = Datum9, y = Retweet9), color = "red4") + 
   geom_smooth(data = Retweetcount10, aes(x = Datum10, y = Retweet10), color = "springgreen1") + 
   geom_smooth(data = Retweetcount11, aes(x = Datum11, y = Retweet11), color = "turquoise4") + 
-  geom_smooth(data = Retweetcount12, aes(x = Datum12, y = Retweet12), color = "black")  
+  geom_smooth(data = Retweetcount12, aes(x = Datum12, y = Retweet12), color = "black") +
+                labs(title ="Popularity of Dutch politicians on Twitter", x ="Date", y ="Likes") +
+theme_economist() + scale_colour_economist() + theme(legend.position="bottom")
+
 
 print(p)
 
